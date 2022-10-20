@@ -1,0 +1,24 @@
+-- create
+CREATE TABLE SEMESTER (
+  Enrollment_No varchar(13) PRIMARY KEY,
+  Student_Name varchar(12),
+  Section varchar(7),
+  Subject_id varchar(10),
+  Marks int
+);
+
+-- insert
+INSERT INTO SEMESTER VALUES (1, 'Tim', 'A',1,70);
+INSERT INTO SEMESTER VALUES (2, 'Jim', 'A',2,75);
+INSERT INTO SEMESTER VALUES (3, 'Kim', 'B',3,65);
+INSERT INTO SEMESTER VALUES (4, 'Tom', 'B',4,77);
+INSERT INTO SEMESTER VALUES (5, 'John','C',5,60);
+INSERT INTO SEMESTER VALUES (6, 'Joe', 'C',1,82);
+INSERT INTO SEMESTER VALUES (7, 'James','B',2,76);
+INSERT INTO SEMESTER VALUES (8, 'Henry','C',5,68);
+INSERT INTO SEMESTER VALUES (9, 'Matt','B',3,71);
+INSERT INTO SEMESTER VALUES (10,'Paul','A',4,79);
+
+-- fetch 
+SELECT Section,
+COUNT(Enrollment_No) AS NO_OF_CANDIDATE FROM SEMESTER WHERE MARKS>=75 GROUP BY Section;
